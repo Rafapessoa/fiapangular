@@ -5,7 +5,8 @@ import { UserListPage } from './pages/UserList/UserList.page'
 import { UserPage } from './pages/User/User.pages';
 
 const routes: Routes = [
-  {   path: 'userlist' , component: UserListPage},
+  {   path: '' , component: UserListPage},
+  {   path: 'user' , component: UserPage},
   {   path: 'user/:id' , component: UserPage},
   
 ];

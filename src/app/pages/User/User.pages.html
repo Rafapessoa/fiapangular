@@ -1,7 +1,30 @@
 <div>
-    <div > <app-Loading [show]="loading"></app-Loading></div>
-    <button (click)="createUser()">
-        Criar User
-    </button>
+    <div>
+        <app-Loading [show]="loading"></app-Loading>
+    </div>
+    <br />
+    <form [formGroup]="userForm" (ngSubmit)="onsubmit()">
+        <input type="text" name="name" placeholder="Nome" formControlName="name" />
+
+        <div *ngIf="userForm.controls.name.invalid && userForm.controls.name.touched">
+            O Campo name é obrigatório
+        </div>
+        <br/>
+        <input type="text" name="age" placeholder="Idade" formControlName="age" />
+        <br/>
+        <input type="text" name="phone" placeholder="Telefone" formControlName="phone" />
+        <br/>
+        <input type="text" name="email" placeholder="E-mail" formControlName="email" />
+        <br />
+        <br/>
+        <button type="submit" [disabled]="!userForm.valid">            
+                Criar/Alterar
+        </button>
+
+
+
+
+    </form>
+
 
 </div>

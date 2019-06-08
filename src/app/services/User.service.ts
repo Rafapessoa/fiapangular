@@ -10,11 +10,10 @@ export class UserService{
         private http: HttpClient,
         private db: AngularFirestore
         ){}
-        
-
-
-    getById(id: String){
-        return this.db.collection('users', ref => ref.where('id','==',id) )
+   
+    getById(id: string){
+        return this.db.collection(
+            'users').doc(id).snapshotChanges()
     }
 
     create(data){
@@ -22,6 +21,14 @@ export class UserService{
             id: uuid(),
             ...data,
         });
+    }
+
+    update(data, DocId){
+        return this.db.collection('users').doc(DocId).update(data);
+    }
+
+    getAll(){
+        return this.db.collection('users').snapshotChanges();
     }
 
 }

@@ -1,12 +1,19 @@
-<div>
-    <div>
-        <ul>
-            <li *ngFor="let item of results">
-                {{ item.id }}
-                {{ item.name }}
-                {{ item.email }}
-            </li>
-        </ul>
-    </div>
-    My Div
-</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of results; index as i">
+            <!-- <th scope="row">{{ i + 1 }}</th> -->
+            <td>{{ item.name }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone }}</td>
+        </tr>
+    </tbody>
+</table>
