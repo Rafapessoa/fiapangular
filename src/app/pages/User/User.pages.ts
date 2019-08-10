@@ -23,7 +23,7 @@ export class UserPage {
 
     private userId: string = '';
     //private data: object = {};
-    private loading: boolean = false;
+    public loading: boolean = false;
 
     constructor(
         private route: ActivatedRoute,

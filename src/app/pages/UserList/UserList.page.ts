@@ -5,11 +5,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
     selector: 'user-list',
     templateUrl: './UserList.page.html',
-    //styleUrls: ['./UserList.page.css']
 })
 export class UserListPage {
 
-    private results = []
+    public results = []
+    private filterBy: string = '';
 
     listForm = new FormGroup({
         name: new FormControl(''),
@@ -18,10 +18,12 @@ export class UserListPage {
         email: new FormControl(''),
     });
 
-    ngOnInit() {
-       
-      this.getList()
-      
+    setFilterBy(event: any){
+        this.filterBy = event.target.value;
+    }
+
+    ngOnInit() {       
+      this.getList()      
     }
 
     constructor(
@@ -30,7 +32,6 @@ export class UserListPage {
 
     private getList() {
         this.userService.getAll().subscribe((data: any) => {
-            //debugger
             this.results = []
             data.forEach(item => {
                 this.results.push(item.payload.doc.data())  

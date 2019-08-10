@@ -8,6 +8,7 @@ import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestor
 
 import { environment } from '../environments/environment';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -17,6 +18,8 @@ import { UserPage } from './pages/User/User.pages'
 import { LoadingComponent } from './components/Loading/Loading.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     UserListPage,
     UserPage,
-    LoadingComponent
+    LoadingComponent,
+    FilterPipe
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -34,7 +38,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     
   ],
   providers: [],
