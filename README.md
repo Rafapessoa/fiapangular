@@ -22,10 +22,12 @@ O Aplicativo é recarregado automáticamente após qualquer mudança no arquivo.
 
 1 - Realize seu cadastro na tela inicial com seu e-mail e senha;
 
-2 - Na tela de Cadastro informe os dados para cadastrar um novocliente;
+2 - Na tela de Cadastro informe os dados para realizar um novo cadastro;
 
-3 - Na tela é possivel fazer filtro com o nome do usuário e order os clientes por nome.
+3 - Na tela é possivel fazer filtro por nome e ordernar por nome.
 
+
+## FIAP 2019
 
 
 
