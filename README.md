@@ -9,6 +9,8 @@ ou baixe para o seu computador.
 É necessário ter instalado o npm em sua máquina.
 
 ## Instalando a aplicação
+Caso não tenha instale o módulo do Angular
+`npm install -g @angular/cli`
 Abra o prompt de comandos do seu computador com usuário Admin(Root) e execute o comando abaixo para instalar:
 Run `npm Install`
 
